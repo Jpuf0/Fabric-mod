@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package xyz.jpuf.testitem;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -40,7 +40,7 @@ public class ExampleMod implements ModInitializer {
 
 		@Override
 		public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-			tooltip.add(new TranslatableText("item.jpuf_mod.testitem.tooltip"));
+			tooltip.add(new TranslatableText("item.jpuf_mod.testitem.tooltip", "fuck", "yall"));
 		}
 	}
 
@@ -48,7 +48,8 @@ public class ExampleMod implements ModInitializer {
 
 
 	@Override
-	public void onInitialize() {		
+	public void onInitialize() {
 		Registry.register(Registry.ITEM, new Identifier("jpuf_mod", "testitem"), TEST_ITEM);
+
 	}
 }

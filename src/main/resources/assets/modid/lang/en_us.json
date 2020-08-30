@@ -1,6 +1,7 @@
 {
   "item.jpuf_mod.testitem": "Test Item",
-  "item.jpuf_mod.testitem.tooltip": "Test Item",
+  "item.jpuf_mod.testitem.tooltip": "World Time: %h:%m:%s",
   "itemGroup.jpuf_mod.general": "General",
-  "itemGroup.jpuf_mod.other": "Other"
+  "itemGroup.jpuf_mod.other": "Other",
+  "enchantment.jpuf_mod.frost": "Frost"
 }
