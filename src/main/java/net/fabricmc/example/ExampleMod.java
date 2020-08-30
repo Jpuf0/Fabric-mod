@@ -1,18 +1,39 @@
 package net.fabricmc.example;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 
 public class ExampleMod implements ModInitializer {
 
-	public static final Item FABRIC_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC));
+	public static class FabricItem extends Item {
+
+		public FabricItem(Settings settings) {
+			super(settings);
+		}
+
+		@Override
+		public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
+			playerEntity.playSound(SoundEvents.BLOCK_WOOL_BREAK, 1.0F, 1.0F);
+			return new TypedActionResult<>(ActionResult.SUCCESS, playerEntity.getStackInHand(hand));
+		}
+	}
+
+	public final FabricItem FABRIC_ITEM = new FabricItem(new Item.Settings().group(ItemGroup.MISC));
 
 
 	@Override
 	public void onInitialize() {		
-		Registry.register(Registry.ITEM, new Identifier("tutorial", "fabric_item"), FABRIC_ITEM);
+		Registry.register(Registry.ITEM, new Identifier("jpuf_mod", "fabric_item"), FABRIC_ITEM);
 	}
 }
