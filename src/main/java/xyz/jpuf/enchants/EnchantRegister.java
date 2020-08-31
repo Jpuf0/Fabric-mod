@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import xyz.jpuf.enchants.FrostEnchant;
 
 public class EnchantRegister implements ModInitializer {
 
@@ -16,5 +15,6 @@ public class EnchantRegister implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        System.out.println("Loaded Frost enchant");
     }
 }

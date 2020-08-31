@@ -19,7 +19,6 @@ public class CubeEntityModel extends EntityModel<CubeEntity> {
 
     @Override
     public void setAngles(CubeEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-
     }
 
     @Override

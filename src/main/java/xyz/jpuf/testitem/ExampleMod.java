@@ -21,6 +21,8 @@ import java.util.List;
 
 public class ExampleMod implements ModInitializer {
 
+	public final TestItem TEST_ITEM = new TestItem(new Item.Settings().group(ExampleMod.ITEM_GROUP));
+
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
 			new Identifier("jpuf_mod", "general"),
 			() -> new ItemStack(Blocks.COBBLESTONE)
@@ -44,7 +46,6 @@ public class ExampleMod implements ModInitializer {
 		}
 	}
 
-	public final TestItem TEST_ITEM = new TestItem(new Item.Settings().group(ExampleMod.ITEM_GROUP));
 
 
 	@Override
